@@ -1,0 +1,45 @@
+{
+  "name": "cartesian",
+  "version": "1.0.0",
+  "description": "Computes the cartesian product of arrays provided by an array or an object",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover test.js",
+    "lint": "eslint *.js",
+    "debug": "node test.js",
+    "check": "istanbul check-coverage coverage/coverage.json"
+  },
+  "pre-commit": [
+    "lint",
+    "test",
+    "check"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexindigo/cartesian.git"
+  },
+  "keywords": [
+    "cartesian",
+    "cartesian product",
+    "array",
+    "object",
+    "properties",
+    "permutation",
+    "combination"
+  ],
+  "author": "Alex Indigo <iam@alexindigo.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexindigo/cartesian/issues"
+  },
+  "homepage": "https://github.com/alexindigo/cartesian#readme",
+  "devDependencies": {
+    "coveralls": "^2.11.4",
+    "eslint": "^1.10.3",
+    "istanbul": "^0.4.1",
+    "pre-commit": "^1.1.2"
+  },
+  "dependencies": {
+    "xtend": "^4.0.1"
+  }
+}

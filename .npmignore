@@ -1,0 +1,10 @@
+.editorconfig
+.eslint
+.travis.yml
+
+*.log
+
+coverage/
+node_modules/
+
+test.js
