@@ -3,6 +3,28 @@ var cartesian = require('./');
 
 var subjects = [
 
+  // bad
+  {
+    input: null,
+    throws: 'Expecting an Array or an Object, but `null` provided.'
+  },
+
+  {
+    input: 'ABC',
+    throws: 'Expecting an Array or an Object, but `string` provided.'
+  },
+
+  {
+    input: 42,
+    throws: 'Expecting an Array or an Object, but `number` provided.'
+  },
+
+  // empty
+  {
+    input: [],
+    expected: []
+  },
+
   // simple
   {
     input: ['A', 'B', 'C'],
@@ -54,6 +76,19 @@ var subjects = [
 
 subjects.forEach(function(test)
 {
-  var product = cartesian(test.input);
-  assert.deepEqual(product, test.expected);
+  var product;
+
+  if (test.throws)
+  {
+    assert.throws(function()
+    {
+      cartesian(test.input);
+    },
+    new RegExp(test.throws));
+  }
+  else
+  {
+    product = cartesian(test.input);
+    assert.deepEqual(product, test.expected);
+  }
 });

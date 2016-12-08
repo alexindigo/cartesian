@@ -18,11 +18,15 @@ function cartesian(list)
     init = [];
     last = list.length - 1;
   }
-  else
+  else if (typeof list == 'object' && list !== null)
   {
     init = {};
     keys = Object.keys(list);
     last = keys.length - 1;
+  }
+  else
+  {
+    throw new TypeError('Expecting an Array or an Object, but `' + (list === null ? 'null' : typeof list) + '` provided.');
   }
 
   function add(row, i)
@@ -32,14 +36,14 @@ function cartesian(list)
     k = keys ? keys[i] : i;
 
     // either array or not, not expecting objects here
-    Array.isArray(list[k]) || (list[k] = [list[k]]);
+    Array.isArray(list[k]) || (typeof list[k] == 'undefined' ? list[k] = [] : list[k] = [list[k]]);
 
     for (j=0; j < list[k].length; j++)
     {
       r = clone(row);
       store(r, list[k][j], k);
 
-      if (i == last)
+      if (i >= last)
       {
         product.push(r);
       }
