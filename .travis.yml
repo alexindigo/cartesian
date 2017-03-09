@@ -1,9 +1,7 @@
 sudo: false
 language: node_js
 node_js:
-  - "0.12"
-  - "iojs"
-  - "4.2"
-  - "stable"
+  - '4.2'
+  - stable
 after_script:
   - "cat coverage/lcov.info | ./node_modules/.bin/coveralls"
