@@ -35,7 +35,7 @@
   "homepage": "https://github.com/alexindigo/cartesian#readme",
   "devDependencies": {
     "coveralls": "^2.11.15",
-    "eslint": "^3.11.1",
+    "eslint": "^3.18.0",
     "istanbul": "^0.4.5",
     "pre-commit": "^1.1.3"
   },
