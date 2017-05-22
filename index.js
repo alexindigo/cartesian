@@ -1,5 +1,3 @@
-var extend = require('xtend/immutable');
-
 // Public API
 module.exports = cartesian;
 
@@ -67,7 +65,7 @@ function cartesian(list)
  */
 function clone(obj)
 {
-  return Array.isArray(obj) ? [].concat(obj) : extend(obj);
+  return Array.isArray(obj) ? [].concat(obj) : Object.assign({}, obj);
 }
 
 /**
